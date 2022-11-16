@@ -1,16 +1,15 @@
-os.system("pip3 install playsound")
-
 import os
 import sys
+
+os.system("pip3 install playsound")
+os.system("clear")
 
 from time import sleep
 from playsound import playsound
 
-clear = "clear"
-
 #Welcome to the real world, Neo!
 
-os.system(clear)
+os.system("clear")
 intro = "\nHi Neo, this is Morpheus!\n"
 decision = "\nI offer you two pills. \n\nYou take the blue pill - the story ends, you wake up in your bed and believe whatever you want to believe. \n\nYou take the red pill - you stay in Wonderland and I show you how deep the rabbit-hole goes!"
 angel = '''\n\n     __/)     (\__
@@ -49,7 +48,7 @@ if "red" in pill.lower():
         sys.stdout.write(char)
         sys.stdout.flush()
     choice = input()
-    os.system(clear)
+    os.system("clear")
     if "yes" in choice.lower():
         for char in matrix:
             sleep(0.05)
@@ -57,4 +56,4 @@ if "red" in pill.lower():
             sys.stdout.flush()
         playsound("Day3/matrix.mp3")
 else:
-    os.system(clear)
+    os.system("clear")
