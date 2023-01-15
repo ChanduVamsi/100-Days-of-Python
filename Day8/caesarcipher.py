@@ -4,19 +4,15 @@ from time import sleep
 from termcolor import colored
 from caesarcipher_helper import logo, alphabets
 
-def encrypt(message, key):
+def caesar(message, key, direction):
     result = ""
     for i in range(0, len(message)):
-        pivot = alphabets.index(message[i]) + key
-        while pivot > 25: pivot -= 26
-        result += alphabets[pivot]
-    return result
-
-def decrypt(message, key):
-    result = ""
-    for i in range(0, len(message)):
-        pivot = alphabets.index(message[i]) - key
-        while pivot < 0: pivot += 26
+        if direction == "encode":
+            pivot = alphabets.index(message[i]) + key
+            while pivot > 25: pivot -= 26
+        else:
+            pivot = alphabets.index(message[i]) - key
+            while pivot < 0: pivot += 26
         result += alphabets[pivot]
     return result
 
@@ -28,20 +24,15 @@ for char in logo:
 flag = "yes"
 
 while flag == "yes":
-    option = input("\nType 'encode' to encode, 'decode' to decode: ").lower()
-    if option == "encode":
-        plain_text = input("\nType your message: ")
-        key = int(input("\nType your shift number: "))
-        print(colored(f"\nEncoded message is {encrypt(plain_text, key)}", 'light_green', attrs=['blink']))
+    direction = input("\nType 'encode' to encode, 'decode' to decode: ").lower()
 
-    elif option == "decode":
-        cipher_text = input("\nType the cipher text: ")
-        key = int(input("\nType your key: "))
-        print(colored(f"\nDecoded message is {decrypt(cipher_text, key)}", 'light_green', attrs=['blink']))
-    
-    else: 
+    if direction != "encode" and direction != "decode":
         print("\nThis is an invalid input. Try again.")
         continue
+    else:
+        message = input("\nEnter the message: ")
+        key = int(input("\nEnter shift amount: "))
+        print(colored(f"\n{direction.capitalize()}d message is {caesar(message, key, direction)}", 'light_green', attrs=['blink']))
 
     flag = input("\nType 'yes' if you want to go again, else type 'no': ").lower()
 
