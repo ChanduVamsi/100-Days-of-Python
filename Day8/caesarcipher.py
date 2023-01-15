@@ -4,7 +4,7 @@ from time import sleep
 from termcolor import colored
 from caesarcipher_helper import logo, alphabets
 
-def encode(message, key):
+def encrypt(message, key):
     result = ""
     for i in range(0, len(message)):
         pivot = alphabets.index(message[i]) + key
@@ -12,7 +12,7 @@ def encode(message, key):
         result += alphabets[pivot]
     return result
 
-def decode(message, key):
+def decrypt(message, key):
     result = ""
     for i in range(0, len(message)):
         pivot = alphabets.index(message[i]) - key
@@ -32,12 +32,12 @@ while flag == "yes":
     if option == "encode":
         plain_text = input("\nType your message: ")
         key = int(input("\nType your shift number: "))
-        print(colored(f"\nEncoded message is {encode(plain_text, key)}", 'light_green', attrs=['blink']))
+        print(colored(f"\nEncoded message is {encrypt(plain_text, key)}", 'light_green', attrs=['blink']))
 
     elif option == "decode":
         cipher_text = input("\nType the cipher text: ")
         key = int(input("\nType your key: "))
-        print(colored(f"\nDecoded message is {decode(cipher_text, key)}", 'light_green', attrs=['blink']))
+        print(colored(f"\nDecoded message is {decrypt(cipher_text, key)}", 'light_green', attrs=['blink']))
     
     else: 
         print("\nThis is an invalid input. Try again.")
