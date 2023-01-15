@@ -1,7 +1,7 @@
 import sys
 sys.path.append("") 
 
-from helper import clear, type_writer, colored_text
+from util.helper import clear, type_writer, colored_text
 from caesarcipher_helper import logo, alphabets
 
 def caesar(message, key, direction):
