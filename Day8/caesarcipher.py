@@ -8,8 +8,7 @@ def encode(message, key):
     result = ""
     for i in range(0, len(message)):
         pivot = alphabets.index(message[i]) + key
-        while pivot > 25:
-            pivot -= 26
+        while pivot > 25: pivot -= 26
         result += alphabets[pivot]
     return result
 
@@ -17,8 +16,7 @@ def decode(message, key):
     result = ""
     for i in range(0, len(message)):
         pivot = alphabets.index(message[i]) - key
-        while pivot < 0:
-            pivot += 26
+        while pivot < 0: pivot += 26
         result += alphabets[pivot]
     return result
 
