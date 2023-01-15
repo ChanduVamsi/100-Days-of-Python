@@ -7,13 +7,15 @@ from caesarcipher_helper import logo, alphabets
 def caesar(message, key, direction):
     result = ""
     for i in range(0, len(message)):
-        if direction == "encode":
-            pivot = alphabets.index(message[i]) + key
-            while pivot > 25: pivot -= 26
-        else:
-            pivot = alphabets.index(message[i]) - key
-            while pivot < 0: pivot += 26
-        result += alphabets[pivot]
+        if message[i] in alphabets:
+            if direction == "encode":
+                pivot = alphabets.index(message[i]) + key
+                while pivot > 25: pivot -= 26
+            else:
+                pivot = alphabets.index(message[i]) - key
+                while pivot < 0: pivot += 26
+            result += alphabets[pivot]
+        else: result += message[i]
     return result
 
 clear()
@@ -34,4 +36,4 @@ while flag == "yes":
     flag = input("\nType 'yes' if you want to go again, else type 'no': ").lower()
 
 clear()
-print(colored_text("\nGAME OVER\n", "red"))
+print(colored_text("\nGOODBYE\n", "red"))
