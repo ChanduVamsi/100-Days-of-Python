@@ -1,7 +1,7 @@
-import os, sys
+import sys
+sys.path.append("") 
 
-from time import sleep
-from termcolor import colored
+from helper import clear, type_writer, colored_text
 from caesarcipher_helper import logo, alphabets
 
 def caesar(message, key, direction):
@@ -16,11 +16,8 @@ def caesar(message, key, direction):
         result += alphabets[pivot]
     return result
 
-os.system("clear")
-for char in logo:
-    sleep(0.02)
-    sys.stdout.write(colored(char, 'light_green', attrs=['blink']))
-    sys.stdout.flush()
+clear()
+type_writer(colored_text(logo, 'light_green'), 0.02)
 flag = "yes"
 
 while flag == "yes":
@@ -32,9 +29,9 @@ while flag == "yes":
     else:
         message = input("\nEnter the message: ")
         key = int(input("\nEnter shift amount: "))
-        print(colored(f"\n{direction.capitalize()}d message is {caesar(message, key, direction)}", 'light_green', attrs=['blink']))
+        print(colored_text(f"\n{direction.capitalize()}d message is {caesar(message, key, direction)}"))
 
     flag = input("\nType 'yes' if you want to go again, else type 'no': ").lower()
 
-os.system("clear")
-print(colored("\nGAME OVER\n", 'red', attrs=['blink']))
+clear()
+print(colored_text("\nGAME OVER\n", "red"))
