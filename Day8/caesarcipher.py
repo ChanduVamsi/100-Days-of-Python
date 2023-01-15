@@ -6,20 +6,12 @@ from caesarcipher_helper import logo, alphabets
 
 def encode(message, key):
     result = ""
-    for i in range(0, len(message)):
-        pivot = alphabets.index(message[i]) + key
-        if pivot > 25:
-            pivot -= 25
-        result += alphabets[pivot]
+    for i in range(0, len(message)): result += alphabets[alphabets.index(message[i]) + key]
     return result
 
 def decode(message, key):
     result = ""
-    for i in range(0, len(message)):
-        pivot = alphabets.index(message[i]) - key
-        if pivot < 0:
-            pivot += 25
-        result += alphabets[pivot]
+    for i in range(0, len(message)): result += alphabets[alphabets.index(message[i]) - key]
     return result
 
 os.system("clear")
