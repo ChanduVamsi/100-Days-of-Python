@@ -6,12 +6,20 @@ from caesarcipher_helper import logo, alphabets
 
 def encode(message, key):
     result = ""
-    for i in range(0, len(message)): result += alphabets[alphabets.index(message[i]) + key]
+    for i in range(0, len(message)):
+        pivot = alphabets.index(message[i]) + key
+        while pivot > 25:
+            pivot -= 26
+        result += alphabets[pivot]
     return result
 
 def decode(message, key):
     result = ""
-    for i in range(0, len(message)): result += alphabets[alphabets.index(message[i]) - key]
+    for i in range(0, len(message)):
+        pivot = alphabets.index(message[i]) - key
+        while pivot < 0:
+            pivot += 26
+        result += alphabets[pivot]
     return result
 
 os.system("clear")
@@ -26,12 +34,12 @@ while flag == "yes":
     if option == "encode":
         plain_text = input("\nType your message: ")
         key = int(input("\nType your shift number: "))
-        print(colored(f"\nEncoded message is {encode(message = plain_text, key = key)}", 'light_green', attrs=['blink']))
+        print(colored(f"\nEncoded message is {encode(plain_text, key)}", 'light_green', attrs=['blink']))
 
     elif option == "decode":
         cipher_text = input("\nType the cipher text: ")
         key = int(input("\nType your key: "))
-        print(colored(f"\nDecoded message is {decode(message = cipher_text, key = key)}", 'light_green', attrs=['blink']))
+        print(colored(f"\nDecoded message is {decode(cipher_text, key)}", 'light_green', attrs=['blink']))
     
     else: 
         print("\nThis is an invalid input. Try again.")
