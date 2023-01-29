@@ -15,7 +15,7 @@ def calc(first_num, operation, second_num):
     elif operation == "//": return first_num // second_num
     elif operation == "%": return first_num % second_num
 
-# "n" for new calculator, "c" to continue with the result and "q" to quit the application
+# flag for "n" for new calculator, "c" to continue with the result and "q" to quit the application
 flag = "n"
 
 while flag == "n" or flag == "c":
