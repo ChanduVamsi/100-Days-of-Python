@@ -4,7 +4,9 @@ sys.path.append("")
 from util.helper import clear
 from calculator_art import logo, operations
 
-def calc(first_num, operation, second_num):
+def calc(first_num, operation, second_num): 
+    """Calculates based on the inputs given by user
+    and returns the mathematical result for the equation"""
     if operation == "+": return first_num + second_num
     elif operation == "-": return first_num - second_num
     elif operation == "*": return first_num * second_num
