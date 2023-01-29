@@ -24,7 +24,7 @@ while flag == "n" or flag == "c":
         print(logo)
         first_num = float(input("Enter the first number: "))
     else: first_num = result
-    operation = input(f"\nOperations: {operations}\n\nEnter an operation from the above list: ")
+    operation = input(f"\nOperations: {operations.keys()}\n\nEnter an operation from the above list: ")
     second_num = float(input("\nEnter the next number: "))
     result = calc(first_num, operation, second_num)
     print(f"\n{first_num} {operation} {second_num} = {result}")
