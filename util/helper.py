@@ -17,4 +17,4 @@ def type_writer(text, speed = 0.02):
 def colored_text(text, color = "light_green"):
 	"""Returns the colored output. 
 	Default is neon green"""
-	return colored(text, color, attrs=['blink'])
+	return colored(text, color, attrs=['bold'])
