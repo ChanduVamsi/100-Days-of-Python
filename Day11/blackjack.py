@@ -1,3 +1,6 @@
+'''Visit https://games.washingtonpost.com/games/blackjack 
+to understand more about this game: BlackJack'''
+
 import sys, random
 sys.path.append("")
 
