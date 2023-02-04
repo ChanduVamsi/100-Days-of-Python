@@ -1,4 +1,4 @@
-Hi there. I've embarked myself on this amazing journey of learning and applying python for the next 100 days. I'll be following "100 Days of Code: The Complete Python Pro Bootcamp for 2022" course on Udemy by Dr. Angela Yu. Link for the same: https://www.udemy.com/course/100-days-of-code/. 
+Hi there. I've embarked myself on this amazing journey of learning and applying python. I'll be following "100 Days of Code: The Complete Python Pro Bootcamp for 2022" course on Udemy by Dr. Angela Yu. Link for the same: https://www.udemy.com/course/100-days-of-code/. 
 
 I'll be updating this repository with new projects on a regular basis as I keep learning more and more concepts. I am so pumped to start this journey and get hands on with it. I strongly suggest you to take the same course as well if you're looking to learn python and don't know where to start. 
 
