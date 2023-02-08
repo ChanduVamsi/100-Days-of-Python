@@ -1,3 +1,5 @@
+# Replicating a digital art by Damien Hirst - The Complete Spot Paintings
+
 import turtle, colorgram, random
 turtle.colormode(255)
 
