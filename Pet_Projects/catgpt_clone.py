@@ -6,9 +6,9 @@ sys.path.append("")
 from util.helper import clear, colored_text, type_writer
 
 def meow():
-    meom = "Meow"
-    for _ in range(random.randint(1, 10)): meom += " meow"
-    return meom + random.choice(['.', '!', '?'])
+    type_writer(colored_text(f"\n{random.choice(['🐱', '🙀', '😿', '😼', '😺', '😻'])}: Meow{(random.randint(1, 10) * ' meow')}{random.choice(['.', '!', '?', '🐾'])}"))
+    while input(f"\n\n{random.choice(['🤔', '🤧', '😂', '🤣', '😉', '😍', '🫣', '😲'])}: ").lower() != "grr":
+        type_writer(colored_text(f"\n{random.choice(['🐱', '🙀', '😿', '😼', '😺', '😻'])}: Meow{(random.randint(1, 10) * ' meow')}{random.choice(['.', '!', '?', '🐾'])}"))
 
 logo = '''   ______      __  __________  ______
   / ____/___ _/ /_/ ____/ __ \/_  __/
@@ -17,9 +17,12 @@ logo = '''   ______      __  __________  ______
 \____/\__,_/\__/\____/_/     /_/     
 '''
 
+catlogo = '''      |\      _,,,---,,_
+ZZZzz /,`.-'`'    -.  ;-;;,_
+     |,4-  ) )-,_. ,\ (  `'-'
+    '---''(_/--'  `-'\_)  '''
+
 clear()
 print(colored_text(logo), end="")
-print(colored_text("\n   What if ChatGPT were a cat?\n"))
-while True:
-    type_writer(f"\n🐱: {colored_text(meow())}")
-    input(f"\n\n🤷: ")
+print(colored_text("\n What if CatGPT was on terminal?\n"))
+meow()
