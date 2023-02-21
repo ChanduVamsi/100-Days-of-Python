@@ -37,16 +37,19 @@ while gameOn:
     if silly.head.distance(snack) < 15:
         silly.extend()
         snack.refresh()
-        banner.addScore()
+        banner.score += 1
     
     # If the snake collides with the walls
-    if (silly.head.xcor() > 320 or silly.head.xcor() < -350 or silly.head.ycor() > 320 or silly.head.ycor() < -300): break
+    if (silly.head.xcor() > 320 or silly.head.xcor() < -350 or silly.head.ycor() > 320 or silly.head.ycor() < -300): 
+        banner.score = 0
+        silly.resetSnake()
     
     # If the snake collides with it's tail
     for part in silly.snake[:0:-1]: 
         if silly.head.distance(part) < 10: 
-            gameOn = False
+            banner.score = 0
+            silly.resetSnake()
             break
 
-banner.gameOver()
+# banner.gameOver()
 canvas.exitonclick()

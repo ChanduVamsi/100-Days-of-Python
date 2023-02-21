@@ -35,6 +35,14 @@ class Snake:
     def extend(self):
         position = self.snake[-1].position()
         self.addPart(position)
+    
+    def resetSnake(self):
+        for part in self.snake: part.goto(1000,1000)
+        self.snake.clear()
+        self.snake = []
+        self.snakeSetup()
+        self.head = self.snake[0]
+        sleep(2)
 
     def up(self): 
         if self.head.heading() != DOWN: self.head.setheading(UP)
